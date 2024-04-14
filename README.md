@@ -1,8 +1,15 @@
 # Spark Connect Sandbox
 
+<!-- TOC depthfrom:2 -->
+
+- [Starting Spark Connect](#starting-spark-connect)
+- [Go](#go)
+
+<!-- /TOC -->
+
 Sandbox repo for experimenting with Spark Connect with every language possible.
 
-## Starting Spark Connect Server
+## Starting Spark Connect
 
 Start Spark Connect in the background:
 
@@ -46,4 +53,44 @@ Stop Spark Connect:
 
 ```bash
 sudo /opt/spark/sbin/stop-connect-server.sh
+```
+
+## Demo Go project
+
+Run the demo project:
+
+```bash
+cd /workspaces/spark-connect-sandbox/projects/demo/go
+
+go run hello_spark_connect.go
+```
+
+Output:
+
+```text
+2024/04/14 16:48:23 DataFrame from sql: select 'apple' as word, 123 as count union all select 'orange' as word, 456 as count
++------+-----+
+|word  |count|
++------+-----+
+|apple |123  |
+|orange|456  |
++------+-----+
+
+2024/04/14 16:48:25 Row: &{[apple 123] 0xc00011db00}
+2024/04/14 16:48:25 Row: &{[orange 456] 0xc00011db00}
+2024/04/14 16:48:25 DataFrame from reading parquet
++------+-----+
+|word  |count|
++------+-----+
+|orange|456  |
+|apple |123  |
++------+-----+
+
+2024/04/14 16:48:26 DataFrame from sql: select count, word from view1 order by count
++-----+------+
+|count|word  |
++-----+------+
+|123  |apple |
+|456  |orange|
++-----+------+
 ```
