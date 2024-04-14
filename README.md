@@ -3,7 +3,7 @@
 <!-- TOC depthfrom:2 -->
 
 - [Starting Spark Connect](#starting-spark-connect)
-- [Go](#go)
+- [Demo Go project](#demo-go-project)
 
 <!-- /TOC -->
 
